@@ -1,5 +1,5 @@
 const fs = require('fs');
-const uuidv4 = require('uuid/v4');
+// const uuidv1 = require('uuid/v1');
 const util = require('util');
 
 const readFile = util.promisify(fs.readFile);
@@ -35,7 +35,7 @@ class StoreNote {
             console.log('please add text');
         }
 
-        const NewNote = { text, id: uuidv4() };
+        const NewNote = { text, id: uuidv1() };
 
         return this.getNotes()
             .then((notes) => [...notes, NewNote])
@@ -45,7 +45,7 @@ class StoreNote {
 
     }
 
-        // const newNote = { text, id: uuidv4() }
+        // const newNote = { text, id: uuidv1() }
        
 
 
